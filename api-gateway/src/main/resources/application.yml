@@ -1,0 +1,26 @@
+server:
+  port: 8088
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+        - id: country
+          uri: lb://country
+          predicates:
+            - Path=/api/countries/**
+        - id: continent
+          uri: lb://continent
+          predicates:
+            - Path=/api/continents/**
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    preferIpAddress: true
+

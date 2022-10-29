@@ -10,6 +10,7 @@
   <packaging>pom</packaging>
 
   <modules>
+    <module>api-gateway</module>
     <module>eureka-server</module>
     <module>continent-service</module>
     <module>country-service</module>
@@ -30,11 +31,7 @@
       <artifactId>spring-cloud-starter-feign</artifactId>
       <version>1.4.7.RELEASE</version>
     </dependency>
-    <dependency>
-      <groupId>uz.pdp</groupId>
-      <artifactId>clients</artifactId>
-      <version>2022.0.1</version>
-    </dependency>
+
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
@@ -72,6 +69,7 @@
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+        <version>${spring-boot.version}</version>
         <configuration>
           <excludes>
             <exclude>
